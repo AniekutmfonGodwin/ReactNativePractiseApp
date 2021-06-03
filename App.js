@@ -3,10 +3,18 @@ import React from 'react';
 import { StyleSheet, Text, View,Button,Alert,TextInput  } from 'react-native';
 
 export default function App() {
+  const [state, setstate] = React.useState('')
+
+  
+
+  function Greet(n) {
+    
+    setstate(n)
+  }
 
 
-  function Greet(text) {
-    console.log("good morning "+text)
+  function format(){
+    alert(Number(state))
   }
 
   /**
@@ -18,11 +26,11 @@ export default function App() {
    */
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>This is the current state: {state}</Text>
       <StatusBar style="auto" />
-      <TextInput onChangeText={Greet} placeholder="Enter your name" />
+      <TextInput value={state} keyboardType="numeric" onChangeText={Greet} placeholder="Enter Amount" />
 
-      <Button title="Press"  onPress={Greet}  />
+      <Button title="Press"  onPress={format}  />
     </View>
   );
 }
