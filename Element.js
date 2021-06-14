@@ -1,15 +1,27 @@
-import React from 'react'
-import {View,Text} from 'react-native'
+import React from 'react';
+import {View,Text,Button} from 'react-native';
 
 
 // class based commponent and func
 
-function Element() {
+
+
+function Element(props) {
+    // {
+    //     name:"anies",
+    //     age:22,
+    //     format:func
+    // }
     return (
         <View>
+            {/* <Button onPress={props.format}  title ="click" />
             <Text>
-                hello
-            </Text>
+                {props.name}
+                {props.age}
+            </Text> */}
+            <View>
+                {props.children}
+            </View>
         </View>
     )
 }

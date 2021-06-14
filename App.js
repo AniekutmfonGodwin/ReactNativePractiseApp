@@ -3,6 +3,23 @@ import React from 'react';
 import { StyleSheet, Text, View,Button,Alert,TextInput  } from 'react-native';
 import Element from './Element'
 
+
+
+
+const NewElement = (props) =>{
+
+  return (
+    <View>
+      <Text>
+        hello world : {props.name}
+      </Text>
+    </View>
+  )
+}
+
+
+
+
 export default function App() {
   const [state, setstate] = React.useState('')
 
@@ -14,8 +31,10 @@ export default function App() {
   }
 
 
-  function format(){
-    alert(Number(state))
+  function greet(){
+    // alert(Number(state))
+    console.log("hello")
+    alert("hello world")
   }
 
   const myStyle = {
@@ -31,16 +50,23 @@ export default function App() {
    */
   return (
     <View style={styles.container}>
-      <Element/>
-      <Element/>
-      <Element/>
-      <Element/>
-      <Element/>
-      <Element/>
-      <Element/>
-      <Element/>
-      <Element/>
-      <Element/>
+      <NewElement name="anies"/> 
+      <Element name="Anies" age={22} format={greet}>
+        <Text>
+          am a child
+        </Text>
+      </Element>
+      <Element name="Anies" age={22} format={greet}>
+        <View style={{
+          width:20,
+          height: 30,
+          backgroundColor:'red'
+        }}>
+          
+        </View>
+      </Element>
+
+     
     </View>
   );
 }
