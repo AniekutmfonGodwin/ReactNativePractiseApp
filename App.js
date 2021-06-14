@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View,Button,Alert,TextInput  } from 'react-native';
+import Element from './Element'
 
 export default function App() {
   const [state, setstate] = React.useState('')
@@ -17,6 +18,10 @@ export default function App() {
     alert(Number(state))
   }
 
+  const myStyle = {
+    con:{width:200,flexDirection:"row"},
+    top:{width:200,flexDirection:"row"}
+  }
   /**
    * learn about functions
    * -functions
@@ -26,11 +31,16 @@ export default function App() {
    */
   return (
     <View style={styles.container}>
-      <Text>This is the current state: {state}</Text>
-      <StatusBar style="auto" />
-      <TextInput value={state} keyboardType="numeric" onChangeText={Greet} placeholder="Enter Amount" />
-
-      <Button title="Press"  onPress={format}  />
+      <Element/>
+      <Element/>
+      <Element/>
+      <Element/>
+      <Element/>
+      <Element/>
+      <Element/>
+      <Element/>
+      <Element/>
+      <Element/>
     </View>
   );
 }
