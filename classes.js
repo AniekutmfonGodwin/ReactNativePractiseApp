@@ -46,3 +46,9 @@ class NewPowerBank extends PowerBank{
 
     }
 }
+
+
+
+/**
+ * javascript classes for mobile phone
+ */
