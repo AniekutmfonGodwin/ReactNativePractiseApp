@@ -6,6 +6,7 @@ import {View,Text,Button} from 'react-native';
 
 
 
+
 function Element(props) {
     // {
     //     name:"anies",
@@ -29,3 +30,54 @@ function Element(props) {
 
 
 export default Element
+
+
+
+/*
+looping through component
+*/
+var data = [
+    {
+            id:1,
+            name:"Premium crystal black sunglasses",
+            price:5000,
+            image:'https://www.w3schools.com/js/default.asp',
+            category:'wallet'
+    },
+    {
+            id:2,
+            name:"Premium  black sunglasses",
+            price:400,
+            image:'https://www.w3schools.com/js/default.asp',
+            category:'jewries'
+    },{
+            id:3,
+            name:"Premium  black sunglasses",
+            price:400,
+            image:'https://www.w3schools.com/js/default.asp',
+            category:'facemasks'
+    },
+
+]
+
+export default function Receipts(props) {
+    const [category,setCategory] = useState("facemasks")
+
+
+    
+    return (
+        <View>
+            {data.filter((item)=>item.category===category).map((value,index)=>(
+                <View>
+                    <Image source={{uri:value.image}} />
+                    <Text>
+                        {value.name}
+                    </Text>
+                    <Text>
+                        {value.price}
+                    </Text>
+                </View>
+            ))}
+        </View>
+    )
+}
