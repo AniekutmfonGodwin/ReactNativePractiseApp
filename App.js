@@ -1,81 +1,54 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View,Button,Alert,TextInput  } from 'react-native';
-import Element from './Element'
+import { StyleSheet, Text,View,Button } from 'react-native';
 
 
-
-
-const NewElement = (props) =>{
-
-  return (
-    <View>
-      <Text>
-        hello world : {props.name}
-      </Text>
-    </View>
-  )
+/**
+ * install vs code
+ * install node
+ * install expo cli  command => npm install --global expo-cli
+ * create a folder for our app
+ * open run expo init
+ * run => expo start --web 
+ * to lunch
+ * 
+ */
+function greet(){
+  console.log("hello world")
 }
 
-
-
+function fullName(args){
+  //     console.log(args.a)
+  
+      return args
+  
+  
+  }
+  
+  
+  let args = {a:33,b:44,c:33}
+  
+  const results = fullName(args)
 
 export default function App() {
-  const [state, setstate] = React.useState('')
-
-  
-
-  function Greet(n) {
-    
-    setstate(n)
-  }
-
-
-  function greet(){
-    // alert(Number(state))
-    console.log("hello")
-    alert("hello world")
-  }
-
-  const myStyle = {
-    con:{width:200,flexDirection:"row"},
-    top:{width:200,flexDirection:"row"}
-  }
-  /**
-   * learn about functions
-   * -functions
-   * -events
-   * - high order functions
-   * Textinput
-   */
   return (
-    <View style={styles.container}>
-      <NewElement name="anies"/> 
-      <Element name="Anies" age={22} format={greet}>
+    <View >
+      <View style={{backgroundColor:"blue"}}>
         <Text>
-          am a child
+          am a blue container
         </Text>
-      </Element>
-      <Element name="Anies" age={22} format={greet}>
-        <View style={{
-          width:20,
-          height: 30,
-          backgroundColor:'red'
-        }}>
-          
-        </View>
-      </Element>
+      </View>
 
-     
+
+      <View style={{backgroundColor:"green"}}>
+        <Text>
+          am a green container
+        </Text>
+
+      </View>
+      <Button onPress={greet}  title="Learn More" color="#000B40" />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
