@@ -2,7 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text,View,Button } from 'react-native';
 
-import UserProfile from './MyComponents'
+// import UserProfile from './MyComponents'
+import NewsDetail from './screens/NewsDetail';
+import NewsList from './screens/NewsList';
+import Settings from './screens/Settings';
 
 /**
  * https://www.behance.net/gallery/102996435/News-App-Design?tracking_source=search_projects_recommended%7Cnews%20mobile%20app
@@ -43,12 +46,7 @@ class
 function App() {
   return (
     <View  >
-      <UserProfile name="anies" />
-
-      {/* <UserProfile name="akan"  />
-      <UserProfile name="Daniel"  /> */}
-      
-      
+      <NewsList/>
     </View>
   );
 }
