@@ -2,8 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text,View,Button } from 'react-native';
 
+import UserProfile from './MyComponents'
 
 /**
+ * https://www.behance.net/gallery/102996435/News-App-Design?tracking_source=search_projects_recommended%7Cnews%20mobile%20app
  * install vs code
  * install node
  * install expo cli  command => npm install --global expo-cli
@@ -13,42 +15,45 @@ import { StyleSheet, Text,View,Button } from 'react-native';
  * to lunch
  * 
  */
-function greet(){
-  console.log("hello world")
-}
 
-function fullName(args){
-  //     console.log(args.a)
-  
-      return args
-  
-  
-  }
-  
-  
-  let args = {a:33,b:44,c:33}
-  
-  const results = fullName(args)
 
-export default function App() {
+/*
+functional
+class 
+ */
+  
+// class UserProfile extends React.Component {
+
+  
+
+//   render() {
+    
+//     return <View>Hello</View>;
+//   }
+
+// }
+
+
+
+
+  
+  
+  
+
+function App() {
   return (
-    <View >
-      <View style={{backgroundColor:"blue"}}>
-        <Text>
-          am a blue container
-        </Text>
-      </View>
+    <View  >
+      <UserProfile name="anies" />
 
-
-      <View style={{backgroundColor:"green"}}>
-        <Text>
-          am a green container
-        </Text>
-
-      </View>
-      <Button onPress={greet}  title="Learn More" color="#000B40" />
+      {/* <UserProfile name="akan"  />
+      <UserProfile name="Daniel"  /> */}
+      
+      
     </View>
   );
 }
+
+
+export default App
 
 
