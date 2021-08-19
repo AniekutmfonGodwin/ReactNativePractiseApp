@@ -4,7 +4,9 @@ import {View,Text} from 'react-native';
 
 
 
-function NewsDetail(){
+function NewsDetail({navigation}){
+    
+
     return (
         <View>
             <Text>
