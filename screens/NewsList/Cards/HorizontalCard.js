@@ -5,9 +5,18 @@ const image = {uri:'https://reactjs.org/logo-og.png'}
 
 function HorizontalCard(){
     return (
-        <ImageBackground source={image} resizeMode="cover">
-        <Text> hello this is it</Text>
+        <ImageBackground imageStyle={{borderRadius:10}}  source={image} style={{
+            height:150,
+            width:300,
+            padding:10,
+            // flexDirection:"row",
+            justifyContent:'flex-end',
+            alignItems:'flex-start'
+            }} resizeMode="cover">
+            <Text style={{color:'white'}} > hello this is it  </Text>
+            <Text style={{color:'white'}} > hello this is it  </Text>
         </ImageBackground>
+        
     )
 }
 
