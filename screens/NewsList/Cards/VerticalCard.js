@@ -6,7 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 export default function VerticalCard() {
     return (
         <View style={{
-            marginTop:40,
+            marginBottom:40,
             height:200,
             width:"100%",
             borderRadius:10,

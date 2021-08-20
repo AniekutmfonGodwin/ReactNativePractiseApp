@@ -9,6 +9,7 @@ function HorizontalCard(){
             height:150,
             width:300,
             padding:10,
+            marginHorizontal:10,    
             // flexDirection:"row",
             justifyContent:'flex-end',
             alignItems:'flex-start'

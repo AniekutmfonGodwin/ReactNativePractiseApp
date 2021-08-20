@@ -6,8 +6,14 @@ import { AntDesign } from '@expo/vector-icons';
 import NewsDetail from './screens/NewsDetail';
 import NewsList from './screens/NewsList';
 import Settings from './screens/Settings';
+
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 /**
  * https://www.behance.net/gallery/102996435/News-App-Design?tracking_source=search_projects_recommended%7Cnews%20mobile%20app
@@ -42,6 +48,7 @@ class
 
 const Stack = createNativeStackNavigator();
 
+const Drawer = createDrawerNavigator()
 
 
 
@@ -56,13 +63,18 @@ function App() {
   return (
     <NavigationContainer >
 
+      {/* <Drawer.Navigator>
+        <Drawer.Screen name="list" component={NewsList} />
+        <Drawer.Screen name="detail" component={NewsDetail} />
+      </Drawer.Navigator> */}
+
       <Stack.Navigator>
-        <Stack.Screen name="list" component={NewsList} options={{
-          headerShown:false
-        }} />
-        <Stack.Screen name="profile" component={NewsList}/>
+        
+        <Stack.Screen name="list" component={NewsList} />
         <Stack.Screen name="detail" component={NewsDetail} />
       </Stack.Navigator>
+
+
 
     </NavigationContainer>
   );
