@@ -1,19 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { StyleSheet, Text,View,Button,TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text,View,TextInput,Button,TouchableOpacity, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 // import UserProfile from './MyComponents'
 import NewsDetail from './screens/NewsDetail';
-import NewsList from './screens/NewsList';
+import EntryComponent from './screens/NewsList';
 import Settings from './screens/Settings';
 
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
+
 
 /**
  * https://www.behance.net/gallery/102996435/News-App-Design?tracking_source=search_projects_recommended%7Cnews%20mobile%20app
@@ -46,36 +47,37 @@ class
 
 
 
-const Stack = createNativeStackNavigator();
-
-const Drawer = createDrawerNavigator()
 
 
 
+const Tab = createBottomTabNavigator()
+
+function ComponentTest(props) {
+  return <View><Text>am in</Text></View>
+}
 
 function App() {
-  const [select,setselect] = useState(1)
+  
 
-  function toggle(){
-    setselect(!select)
+  function handleSubmitUsername(text){
+    
+    changedata(prev=>({...prev,username:text}))
+    
   }
+
+  function handleSubmitPassword(text){
+    
+    changedata(prev=>({...prev,password:text}))
+    
+  }
+
   
   return (
     <NavigationContainer >
-
-      {/* <Drawer.Navigator>
-        <Drawer.Screen name="list" component={NewsList} />
-        <Drawer.Screen name="detail" component={NewsDetail} />
-      </Drawer.Navigator> */}
-
-      <Stack.Navigator>
-        
-        <Stack.Screen name="list" component={NewsList} />
-        <Stack.Screen name="detail" component={NewsDetail} />
-      </Stack.Navigator>
-
-
-
+      <Tab.Navigator>
+        <Tab.Screen options={{headerShown:false}} name="main" component={EntryComponent} />
+        <Tab.Screen options={{headerShown:false}} name="new" component={ComponentTest} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }

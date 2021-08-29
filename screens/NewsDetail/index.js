@@ -4,13 +4,14 @@ import {View,Text} from 'react-native';
 
 
 
-function NewsDetail({navigation}){
+function NewsDetail({navigation,route}){
+    const { title } = route.params;
     
 
     return (
         <View>
             <Text>
-                this is a NewsList screen
+                detaile screen with title {title}
             </Text>
         </View>
     )
